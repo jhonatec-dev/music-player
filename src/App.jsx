@@ -10,7 +10,7 @@ export default class App extends Component {
       audioUrl: JavaScriptation,
       artistName: 'My Chemical Romance',
       trackName: 'Frio',
-      colorElements: 'red',
+      colorElements: '#03df81',
     }
     return (
       <div style={{width:'500px'}}>
@@ -22,13 +22,3 @@ export default class App extends Component {
     )
   }
 }
-
-
-/*
-imagem do album
-nome do artista
-nome da musica
-preview da Musica
-
-
-*/

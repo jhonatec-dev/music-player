@@ -27,6 +27,17 @@ const audioInfo = {
       trackName,
       colorElements: 'red',
     }
+
+EXEMPLO:
+
+const audioinfo = {
+      cover: 'https://trybetunes.jhonatec.dev/static/media/jhonatecAlbum.dc43dd4adbccaf8bd95f.png',
+      audioUrl: 'https://trybetunes.jhonatec.dev/static/media/Frio.496795137f524a5ce8dc.mp3',
+      artistName: 'Jhonatec',
+      trackName: 'Frio',
+      colorElements: '#03df81',
+    }
+
 </pre>
 
 >O atributo <code>colorElements</code> será a cor de destaque dos elementos renderizados
