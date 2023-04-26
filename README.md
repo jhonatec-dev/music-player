@@ -1,6 +1,11 @@
 # music-player --> Em Desenvolvimento <--
 Reprodutor de Música usando React (permite estilização via props)
 
+## Colaboração ##
+- Geovanna Otoni <a href="https://github.com/geovannaotoni">GitHub</a>
+- Amanda Lopes <a href="https://github.com/amanda-vlopes">GitHub</a>
+- Amanayara <a href="https://github.com/Amanayaradev">GitHub</a>
+
 # Instalação
 Para usar esse componente em desenvolvimento, basta baixar a pasta MusicPlayer e adicionar ao seu projeto!
 
