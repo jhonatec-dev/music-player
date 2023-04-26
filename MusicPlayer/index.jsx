@@ -20,7 +20,6 @@ export default class MusicPlayer extends Component {
   };
 
   componentDidMount() {
-    // receber preview via props e atualizar o elemento de audio no estado
     const { info: { audioUrl } } = this.props;
     const { volume } = this.state;
     let { audio } = this.state;
@@ -50,7 +49,6 @@ export default class MusicPlayer extends Component {
     const current = Math.round(audio.currentTime);
     const lasting = Math.round(audio.duration - current);
     const duration = Math.round(audio.duration || 0);
-    // console.log(audio, duration, lasting);
     this.setState({ current, lasting, duration });
   };
 
@@ -67,8 +65,6 @@ export default class MusicPlayer extends Component {
     } else {
       audio.pause();
     }
-
-    document.querySelector('.css-eg0mwd-MuiSlider-thumb').classList.remo;
   };
 
   changeAudioTime = (_ev, value) => {
@@ -84,13 +80,11 @@ export default class MusicPlayer extends Component {
     const { duration, lasting, current, volume, audio } = this.state;
 
     return (
-      <div
-        className="MusicPlayer"
-      >
-        <div
-          className="MusicPlayer__cover"
-        >
-          <img src={ cover } alt={ artistName } />
+      <div className="MusicPlayer">
+        <div className="MusicPlayer__cover">
+          <img className='MusicPlayer__cover__img'
+          src={ cover } 
+          alt={ artistName } />
           <div className="MusicPlayer__artist">
             {artistName}
           </div>
