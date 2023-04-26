@@ -1,7 +1,7 @@
 # music-player --> Em Desenvolvimento <--
 Reprodutor de Música usando React (permite estilização via props)
 
-<img src="./src/assets/print.png" alt="print">
+<img src="./print.png" alt="print">
 
 ## Colaboração ##
 - Geovanna Otoni <a href="https://github.com/geovannaotoni">GitHub</a>
@@ -19,7 +19,7 @@ E rode os comandos abaixo para instalar os pacotes MUI:
 
 <code>npm install postcss-safe-important --save-dev</code>
 
-Feito isso, apenas importe desta maneira no seu arquivo:
+Feito isso, apenas importe desta maneira no arquivo ou vai utilizar o componente:
 
 <code>import MusicPlayer from './MusicPlayer';</code>
 
