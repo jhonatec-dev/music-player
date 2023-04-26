@@ -1,3 +1,43 @@
-.css-1d6wzja-MuiButton-startIcon{
-  margin: 0 !important;
+.MusicPlayer {
+
+  /* Cor da fonte e dos ícones de volume */
+
+  /* color: red; */
+  display: flex;
+  gap: 12px;
+  margin: 4px;
+  padding: 10px;
+  width: 100%;
+}
+
+.MusicPlayer__cover {
+  padding: 8px;
+  text-align: center;
+}
+
+.MusicPlayer__artist {
+  font-size: small;
+  font-weight: 600;
+  text-align: center;
+}
+
+.MusicPlayer__info {
+  width: 100%;
+}
+
+.MusicPlayer__info__track-name {
+  font-size: large;
+  font-weight: 600;
+}
+
+.MusicPlayer__info__time {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  margin-top: -8px;
+}
+
+.MusicPlayer__info__controls {
+  display: flex;
+  justify-content: space-between;
 }

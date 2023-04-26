@@ -10,6 +10,8 @@ E rode os comandos abaixo para instalar os pacotes MUI:
 
 <code>npm install @mui/icons-material</code>
 
+<code>npm install postcss-safe-important --save-dev</code>
+
 Feito isso, apenas importe desta maneira no seu arquivo:
 
 <code>import MusicPlayer from './MusicPlayer';</code>
@@ -42,4 +44,5 @@ const audioinfo = {
 
 >O atributo <code>colorElements</code> será a cor de destaque dos elementos renderizados
 
+>As classes do MusicPlayer estão acessíveis para edição
 

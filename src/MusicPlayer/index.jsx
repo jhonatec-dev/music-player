@@ -1,7 +1,9 @@
 import {
-  PauseTwoTone, PlayArrowTwoTone, VolumeDown, VolumeUp,
+  Pause,
+  PlayArrow,
+  VolumeDown, VolumeUp,
 } from '@mui/icons-material';
-import { Button, Slider, Stack } from '@mui/material';
+import { IconButton, Slider, Stack } from '@mui/material';
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 import './music-player.css';
@@ -65,6 +67,8 @@ export default class MusicPlayer extends Component {
     } else {
       audio.pause();
     }
+
+    document.querySelector('.css-eg0mwd-MuiSlider-thumb').classList.remo;
   };
 
   changeAudioTime = (_ev, value) => {
@@ -78,25 +82,21 @@ export default class MusicPlayer extends Component {
     const { info } = this.props;
     const { cover, artistName, trackName, colorElements } = info;
     const { duration, lasting, current, volume, audio } = this.state;
+
     return (
       <div
         className="MusicPlayer"
-        style={ { display: 'flex', width: '100%', padding: '10px', gap: '12px' } }
       >
         <div
           className="MusicPlayer__cover"
-          style={ { padding: '8px', textAlign: 'center' } }
         >
-          <img src={ cover } alt="" style={ { width: '80px' } } />
-          <div
-            style={ { fontSize: 'small', fontWeight: '600', textAlign: 'center' } }
-          >
+          <img src={ cover } alt={ artistName } />
+          <div className="MusicPlayer__artist">
             {artistName}
-
           </div>
         </div>
-        <div className="MusicPlayer__info" style={ { width: '100%' } }>
-          <div style={ { fontSize: 'large', fontWeight: '600' } }>{trackName}</div>
+        <div className="MusicPlayer__info">
+          <div className="MusicPlayer__info__track-name">{trackName}</div>
           <Slider
             min={ 0 }
             max={ duration }
@@ -104,30 +104,19 @@ export default class MusicPlayer extends Component {
             onChange={ this.changeAudioTime }
             sx={ { color: colorElements } }
           />
-          <div
-            className="MusicPlayer__time"
-            style={ {
-              display: 'flex',
-              justifyContent: 'space-between',
-              marginTop: '-8px',
-              marginBottom: '12px' } }
-          >
+          <div className="MusicPlayer__info__time">
             <span>{this.convertSeconds(current)}</span>
             <span>{this.convertSeconds(lasting)}</span>
           </div>
-          <div style={ { display: 'flex', justifyContent: 'space-between' } }>
-            <Button
-              variant="contained"
-              sx={ {
-                textAlign: 'center',
-                background: colorElements,
-                ':hover': `background: ${colorElements}`,
+          <div className="MusicPlayer__info__controls">
+            <IconButton
+              sx={ { background: colorElements,
+                ':hover': { background: `${colorElements}80` },
               } }
-              startIcon={
-                audio.paused ? <PlayArrowTwoTone /> : <PauseTwoTone />
-              }
               onClick={ this.playPause }
-            />
+            >
+              {audio.paused ? <PlayArrow /> : <Pause />}
+            </IconButton>
             <Stack
               className="MusicPlayer__volume"
               flex
@@ -143,7 +132,8 @@ export default class MusicPlayer extends Component {
                 max={ 100 }
                 onChange={ this.changeVolume }
                 value={ volume }
-                sx={ { color: colorElements } }
+                sx={ { color: colorElements,
+                } }
               />
               <VolumeUp />
             </Stack>
