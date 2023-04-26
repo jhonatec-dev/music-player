@@ -1,12 +1,13 @@
-import { Component } from 'react'
-import MusicPlayer from './MusicPlayer'
+import { Component } from 'react';
+import MusicPlayer from './MusicPlayer';
+import JavaScriptation from './assets/mcr.mp3';
 
 
 export default class App extends Component {
   render() {
     const info = {
       cover: 'https://trybetunes.jhonatec.dev/static/media/jhonatecAlbum.dc43dd4adbccaf8bd95f.png',
-      audioUrl: 'https://trybetunes.jhonatec.dev/static/media/Frio.496795137f524a5ce8dc.mp3',
+      audioUrl: JavaScriptation,
       artistName: 'Jhonatec',
       trackName: 'Frio',
     }
