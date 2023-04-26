@@ -8,8 +8,9 @@ export default class App extends Component {
     const info = {
       cover: 'https://trybetunes.jhonatec.dev/static/media/jhonatecAlbum.dc43dd4adbccaf8bd95f.png',
       audioUrl: JavaScriptation,
-      artistName: 'Jhonatec',
+      artistName: 'My Chemical Romance',
       trackName: 'Frio',
+      colorElements: 'red',
     }
     return (
       <div style={{width:'500px'}}>

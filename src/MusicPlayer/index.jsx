@@ -3,6 +3,7 @@ import { PauseTwoTone, PlayArrowTwoTone, VolumeDown, VolumeUp } from '@mui/icons
 import { Button, Slider, Stack } from '@mui/material';
 import PropTypes from "prop-types";
 import { Component } from 'react';
+import './music-player.css';
 
 
 let audio = new Audio('');
@@ -25,7 +26,7 @@ export default class MusicPlayer extends Component {
     const current = 0;
     const duration = Number.isNaN(audio.duration) ? 0 : Math.round(audio.duration);
     const lasting = Math.round(duration || 0);
-    console.log(audioUrl, audio, duration);
+    // console.log(audioUrl, audio, duration);
     this.setState({audio, current, lasting, duration});
     setInterval(this.renderAudioInfo, intervalRender);
   }
@@ -63,37 +64,44 @@ export default class MusicPlayer extends Component {
     }
   }
 
-  changeAudioTime = () => {
-    const {current} = this.state;
-    audio.currentTime = current;
+  changeAudioTime = (_ev, value) => {
+    audio.currentTime = value;
+    const current = Math.round(value);
+    this.setState({current})
   }
 
   render() {
     const{info} = this.props;
-    const {cover, artistName, trackName} = info;
+    const {cover, artistName, trackName, colorElements } = info;
     const {duration, lasting, current, volume} = this.state;
     return (
-      <div style={{display: 'flex', width: '100%', gap: '12px', padding: '10px'}}>
-        <div className='music-player-cover'>
+      <div className='MusicPlayer' style={{display: 'flex', width: '100%', padding: '10px', gap: '12px'}}>
+        <div className='MusicPlayer__cover' style={{padding: '8px', textAlign: 'center'}}>
           <img src={cover} alt="" style={{width: '80px'}}/>
-          <span>{artistName}</span>
+          <div style={{fontSize:'small', fontWeight:'600', textAlign: 'center'}}>{artistName}</div>
         </div>
-        <div className='music-player-info' style={{width: '100%'}}>
-        <span>{trackName}</span>
-        <Slider min={0} max={duration} value={current} onChange={this.changeAudioTime}/>
-        <div className='music-player-time' style={{display: 'flex', justifyContent: 'space-between'}}>
+        <div className='MusicPlayer__info' style={{width: '100%'}}>
+        <div style={{fontSize:'large', fontWeight:'600'}}>{trackName}</div>
+        <Slider min={0} max={duration} value={current} onChange={this.changeAudioTime} sx={{color: colorElements}}/>
+        <div className='MusicPlayer__time' style={{display: 'flex', justifyContent: 'space-between', marginTop: '-8px', marginBottom:'12px'}}>
           <span>{this.convertSeconds(current)}</span>
           <span>{this.convertSeconds(lasting)}</span>
         </div>
         <div style={{display: 'flex', justifyContent: 'space-between'}}>
           <Button variant='contained'
-          sx={{textAlign: 'center'}}
+          sx={{textAlign: 'center', background: colorElements, ":hover":`background: ${colorElements}`}}
           startIcon={
           audio.paused ? <PlayArrowTwoTone/> : <PauseTwoTone/>
           }  onClick={this.playPause}/>
-          <Stack flex={true} width="200px" direction="row" justifyContent="space-between" gap="10px" alignItems="center">
+          <Stack 
+          className="MusicPlayer__volume" 
+          flex={true} width="200px" 
+          direction="row" 
+          justifyContent="space-between" 
+          gap="10px" 
+          alignItems="center">
             <VolumeDown />
-            <Slider min={0} max={100} onChange={this.changeVolume} value={volume}/>
+            <Slider min={0} max={100} onChange={this.changeVolume} value={volume} sx={{color: colorElements}}/>
             <VolumeUp />
           </Stack>
         </div>
@@ -109,6 +117,7 @@ MusicPlayer.propTypes = {
     audioUrl: PropTypes.string,
     cover: PropTypes.string,
     trackName: PropTypes.string,
+    colorElements: PropTypes.string,
   }).isRequired
 }
 
