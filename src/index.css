@@ -36,6 +36,10 @@ h1 {
   line-height: 1.1;
 }
 
+.MusicPlayer__cover>img{
+  width: 100px;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

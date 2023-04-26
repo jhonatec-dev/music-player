@@ -1,6 +1,8 @@
 # music-player --> Em Desenvolvimento <--
 Reprodutor de Música usando React (permite estilização via props)
 
+<img src="./src/assets/print.png" alt="print">
+
 ## Colaboração ##
 - Geovanna Otoni <a href="https://github.com/geovannaotoni">GitHub</a>
 - Amanda Lopes <a href="https://github.com/amanda-vlopes">GitHub</a>
