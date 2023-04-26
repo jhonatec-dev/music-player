@@ -27,7 +27,7 @@ const audioInfo = {
       audioUrl: URL_AUDIO_MP3,
       artistName,
       trackName,
-      colorElements: 'red',
+      colorElements: HEXCOLOR,
     }
 
 EXEMPLO:
@@ -43,6 +43,8 @@ const audioinfo = {
 </pre>
 
 >O atributo <code>colorElements</code> será a cor de destaque dos elementos renderizados
+
+>Envie o <code>colorElements</code> como uma string contendo a cor em HEX com 6 dígitos <code>"#1d1d1d"</code> por exemplo
 
 >As classes do MusicPlayer estão acessíveis para edição
 
